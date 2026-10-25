@@ -9,14 +9,4 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-### Ignore Folders ###
-idea/
-api-test-framework/
-App/
-Dsa/
-FockWebTests/
-Java-Fundamentals/
-lesson-code/
-Sparta-Project/
-starter-code/
-SwagLabs_TestFramework/
+

@@ -5,14 +5,16 @@ public class HackingLogic {
 
 
     public int calculateLikeness(String password, String guess){
-        int count = 0;
+        int likeness = 0;
+
+        int limit = Math.min(password.length(), guess.length()); //limi
         //gets and checks each character of the user's guess and the password
-        for(int i = 0; i <password.length(); i++){
+        for(int i = 0; i < limit; i++){
             if(password.charAt(i) == guess.charAt(i)){
-                count++; //Any matching character will increase the count simulating the likeness
+                likeness++; //Any matching character will increase the count simulating the likeness
             }
         }
-        return count;
+        return likeness;
     }
     public void errorMitigation(){
 

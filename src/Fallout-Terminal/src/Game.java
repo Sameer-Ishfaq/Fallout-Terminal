@@ -23,27 +23,21 @@ public class Game {
             terminal_ui.displayAttempts(attemptTracker.getRemainingGuesses()); //get current guesses
             System.out.print("PASSWORD: ");
             String guess = terminal_ui.getGuess(); //get the user's guess. Input will be turned into uppercase.
-            boolean wordExists = false;
+
+            //guess.length() != password.length() ||
 
             if(!guess.equals(password)){
                 attemptTracker.wrongGuess();
             }
 
-            int likeness = hackingLogic.calculateLikeness(password, guess); //Likeness wasn't appearing as variable wasn't being used. Fixed by implementing in terminal_UI
-            terminal_ui.displayLikeness(likeness);
-
             if(guess.equals(password)){ //While loop wasn't executing due to semicolon being put on line 23. Fixed
                 terminal_ui.successfullGuess();
                 return;
             }
+            int likeness = hackingLogic.calculateLikeness(password, guess); //Likeness wasn't appearing as variable wasn't being used. Fixed by implementing in terminal_UI
+            terminal_ui.displayLikeness(likeness);
 
-//            for(String word: wordGenerator.getWords()){
-//                if (word.equals(guess)) {
-//                    wordExists = true;
-//                    break;
-//                }
-//            }
-//
+
         }
         terminal_ui.failedAttempt();
         System.out.println("PASSWORD WAS: " + password);
